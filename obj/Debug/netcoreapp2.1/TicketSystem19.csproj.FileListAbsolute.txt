@@ -1,0 +1,11 @@
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\obj\Debug\netcoreapp2.1\TicketSystem19.csprojAssemblyReference.cache
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\obj\Debug\netcoreapp2.1\TicketSystem19.AssemblyInfoInputs.cache
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\obj\Debug\netcoreapp2.1\TicketSystem19.AssemblyInfo.cs
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\bin\Debug\netcoreapp2.1\TicketSystem19.deps.json
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\bin\Debug\netcoreapp2.1\TicketSystem19.runtimeconfig.json
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\bin\Debug\netcoreapp2.1\TicketSystem19.runtimeconfig.dev.json
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\bin\Debug\netcoreapp2.1\TicketSystem19.dll
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\bin\Debug\netcoreapp2.1\TicketSystem19.pdb
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\obj\Debug\netcoreapp2.1\TicketSystem19.dll
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\obj\Debug\netcoreapp2.1\TicketSystem19.pdb
+C:\Users\mastr\source\repos\TicketSystem19\TicketSystem19\bin\Debug\netcoreapp2.1\NLog.config
