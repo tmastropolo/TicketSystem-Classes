@@ -8,20 +8,23 @@ namespace TicketSystem19
 {
     class EnhanceFile
     {
-        
-        public string filePath { get; set; }
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+
+        public string efile { get; set; }
         public List<Enhancement> Enhances { get; set; }
 
         public EnhanceFile(string path)
         {
+            logger.Info("Start of Enhanced file");
             Enhances = new List<Enhancement>();
-            filePath = path;
+            efile = path;
 
 
-            StreamReader sr = new StreamReader(filePath);
+            StreamReader sr = new StreamReader(efile);
             sr.ReadLine();
             while (!sr.EndOfStream)
             {
+                logger.Info("Enhance File");
                 Enhancement enhancement = new Enhancement();
                 string line = sr.ReadLine();
                 String[] enhanceDetail = line.Split(",");
@@ -45,9 +48,10 @@ namespace TicketSystem19
 
         public void AddEnhance(Enhancement enhancement)
         {
+            logger.Info("Add Enhanced ticket");
             enhancement.ticketID = Enhances.Max(t => t.ticketID) + 1;
             string summery = enhancement.summery.IndexOf(',') != -1 ? $"\"{enhancement.summery}\"" : enhancement.summery;
-            StreamWriter sw = new StreamWriter(filePath, true);
+            StreamWriter sw = new StreamWriter(efile, true);
             sw.WriteLine($"{enhancement.ticketID},{enhancement.summery},{enhancement.status},{enhancement.priority},{enhancement.submitter},{enhancement.assigned},{string.Join(", ", enhancement.watching)}," +
                 $"{enhancement.software}, {enhancement.cost}, {enhancement.reason}, {enhancement.estimate}");
             sw.Close();

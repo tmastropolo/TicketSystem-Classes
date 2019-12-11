@@ -8,17 +8,20 @@ namespace TicketSystem19
 {
     class TicketFile
     {
-        public string filePath { get; set; }
+        private static NLog.Logger logger = NLog.LogManager.GetCurrentClassLogger();
+        public string file { get; set; }
         public List<Ticket> Tickets { get; set; }
         public TicketFile(string path)
         {
+            logger.Info("Start of Ticket File");
             Tickets = new List<Ticket>();
-            filePath = path;
+            file = path;
 
-            StreamReader sr = new StreamReader(filePath);
+            StreamReader sr = new StreamReader(file);
             sr.ReadLine();
             while (!sr.EndOfStream)
             {
+                logger.Info("Read Ticket File");
                 Ticket ticket = new Ticket();
                 string line = sr.ReadLine();
                 String[] ticketDetail = line.Split(',');
@@ -38,9 +41,10 @@ namespace TicketSystem19
 
         public void AddTicket(Ticket ticket)
         {
+            logger.Info("Add Ticket to file");
             ticket.ticketID = Tickets.Max(t => t.ticketID) + 1;
             string summery = ticket.summery.IndexOf(',') != -1 ? $"\"{ticket.summery}\"" : ticket.summery;
-            StreamWriter sw = new StreamWriter(filePath, true);
+            StreamWriter sw = new StreamWriter(file, true);
             sw.WriteLine($"{ticket.ticketID},{ticket.summery},{ticket.status},{ticket.priority},{ticket.submitter},{ticket.assigned},{string.Join(", ", ticket.watching)}");
             sw.Close();
 
